@@ -19,6 +19,36 @@ is about doing that tedious work for me.
 * Wodk/Logger -- A personal logger, detail below (version 1.0.0)
 * Wodk/TwigFilters -- A personal extension to Twig, details below (version 1.0.0)
 
+### What It Looks Like ###
+
+	├── build.rb
+	├── index.php
+	├── routes.php
+	├── web_app.log
+	├── controllers
+	│   └── AppController.php
+	│   └── MainController.php
+	│   └── ...
+	├── public
+	│   └── backbone-min.js
+	│   └── jquery-1.7.2.min.js
+	│   └── main.css
+	│   └── underscore-min.js
+	│   └── ...
+	├── vendor
+	│   └── limonade
+	│   └── Twig
+	│   └── Wodk
+	│   └── ...
+	└── views
+		└── cache
+			└── ...
+		└── template
+			└── base.html.twig
+			└── home.html.twig
+			└── macros.twig
+			└── ...
+        
 ## How to Use ##
 
 1. Clone the git repo
