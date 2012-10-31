@@ -80,6 +80,43 @@ is about doing that tedious work for me.
 > Socket  
 > Database table name prefix  
 
+### Building: From Route to Controller to Template ###
+
+Let's say you want to render a page at `http://www.example.com/myapp/about`. This assumes that your base URI is /myapp.
+
+In `routes.php` setup your routing information:
+
+```php
+// GET /about
+dispatch('/about', 'MainController::about')
+```
+In `controllers/MainController.php` create your handler method:
+
+```php
+class MainController extends AppController
+{
+	static function about() {
+		return self::template("about.html.twig", array(
+			"some_data" => "Some data."
+		));
+	}
+}
+```
+
+In `views/templates/about.html.twig` create your template code
+
+```django
+{% extends "base.html.twig" %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+	{{ parent() }}
+	<p>{{ some_data }}</p>
+{% endblock %}
+```
+
 * * * 
 
 ## Wodk Classes ##
