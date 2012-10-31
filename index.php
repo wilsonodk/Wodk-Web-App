@@ -6,7 +6,7 @@ define('CACHE_DIR',		SITE_ROOT . '/views/cache');
 define('TEMPLATE_DIR',	SITE_ROOT . '/views/templates');
 define('SITE_NAME',		%%site_name%%);
 define('WODK_LOG',		SITE_ROOT . '/web_app.log');
-define('WODK_BASE_URI',	%%base_uri%%);
+define('WODK_BASE_URI',	'%%base_uri%%');
 // Use this with halt() to send a 403
 define('FORBIDDEN',		403);
 // Database connection

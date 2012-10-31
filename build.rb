@@ -20,7 +20,7 @@ Let's get started...
 puts "What is your human readable site name? 
 Example: Football Challenge or D&D Encounter Builder"
 temp = gets.chomp
-values['site_name'] = temp.size == 0 ? "Site Name" : temp
+values['site_name'] = temp.size == 0 ? "'Site Name'" : "'#{temp}'"
 # Base URI
 puts "What is the URI where the app is being loaded? 
 For example, if the site is loading from `http://example.com/myApp`, the URI is `/myApp`. 
