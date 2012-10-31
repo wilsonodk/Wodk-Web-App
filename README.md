@@ -8,12 +8,18 @@ I like to build small simple web apps. Everytime I find myself having to bring
 together all the various files, and build the directory stucture. This project
 is about doing that tedious work for me.
 
+## Requirements ##
+
+* PHP >= 5.2.4
+* MySQL >= 5.0.1
+* Ruby 1.8.7 (for build script)
+
 ## What's Installed ##
 
 * [Limonade][] -- A PHP microframework. (version 0.5.0)
 * [Twig][] -- A PHP templating engine. (version 1.10.0)
-* [jQuery][] -- The jQuery Library (version 1.7.2)
 * [Backbone.js][] -- A MVCish framework for JavaScript (version 0.9.2)
+* [jQuery][] -- The jQuery Library (version 1.7.2)
 * [Underscore.js][] -- A utility JavaScript library (version 1.3.3)
 * Wodk/MyDB -- A personal extension to MySQLi, details below (version 1.0.0)
 * Wodk/Logger -- A personal logger, detail below (version 1.0.0)
