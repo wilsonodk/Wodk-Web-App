@@ -60,8 +60,14 @@ end
 # Clean up the .git folders
 puts " 
 Removing github files and folders"
-`rm -rf .git/; rm -f .gitignore;`
-puts "..."
+["rm -rf .git/", "rm -f .gitignore", "rm -f README.md"].each do |cmd| 
+	puts "#{cmd}"
+	`#{cmd}`
+	puts "..."
+end
 
 # Web App Ready
-puts "You're all set. Get started!"
+puts "
+You're all set to get started!
+
+You can safely remove build.rb now."

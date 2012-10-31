@@ -21,7 +21,7 @@ is about doing that tedious work for me.
 
 ### What It Looks Like ###
 
-	├── build.rb
+	├── .htaccess
 	├── index.php
 	├── routes.php
 	├── web_app.log
