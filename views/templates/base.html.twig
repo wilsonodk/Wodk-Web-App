@@ -1,0 +1,19 @@
+{% import "macros.twig" as m %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>{{ site_name }}</title>
+<link type="text/css" rel="stylesheet" href="./public/main.css" />
+<script type="application/javascript" src="./public/jquery-1.7.2.min.js"></script>
+<script type="application/javascript" src="./public/underscore-min.js"></script>
+<script type="application/javascript" src="./public/backbone-min.js"></script>
+{% block head %}
+{% endblock %}
+</head>
+<body>
+<h1>{{ site_name }}</h1>
+{% block content %}
+{% endblock %}
+</body>
+</html>
