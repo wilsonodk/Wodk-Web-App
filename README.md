@@ -2,11 +2,7 @@
 
 A PHP/JS web application framework starter kit.
 
-<div style="background-color: #eff; color: #900; border: 1px solid #900; margin: 10px; padding: 5px 10px;">
-THIS IS NOT READY!
-</div>
-
-Version 0.0.1
+Version 1.0.0
 
 I like to build small simple web apps. Everytime I find myself having to bring 
 together all the various files, and build the directory stucture. This project
