@@ -121,13 +121,20 @@ In `views/templates/about.html.twig` create your template code
 ## Change Log ##
 
 * 1.0.3
-> Released November 1, 2012 -- Improved default template example. Now the head block uses inheritance.
+> _Released November 1, 2012_
+> Improved default template example. Now the head block uses inheritance.
+
 * 1.0.2
-> Released November 1, 2012 -- Improved initial run of the web app.
+> _Released November 1, 2012_
+> Improved initial run of the web app.
+
 * 1.0.1
-> Released October 31, 2012 -- Fixes for build script.
-* 1.0.1
-> Released October 31, 2012 -- Initial update.
+> _Released October 31, 2012_
+> Fixes for build script.
+
+* 1.0.0
+> _Released October 31, 2012_
+> Initial update.
 
 * * * 
 
