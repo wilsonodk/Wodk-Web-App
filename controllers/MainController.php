@@ -9,7 +9,7 @@ class MainController extends AppController
 		$statuses = array();
 
 		if (file_exists(SITE_ROOT . '/build.rb')) {
-			$statuses[] = 'You can saftly remove the build script now.';
+			$statuses[] = 'You can safely remove the build script now.';
 		}
 
 		if (!is_writable(SITE_ROOT . '/views/cache')) {
