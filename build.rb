@@ -24,9 +24,9 @@ values['site_name'] = temp.size == 0 ? "'Site Name'" : "'#{temp}'"
 # Base URI
 puts "What is the URI where the app is being loaded? 
 For example, if the site is loading from `http://example.com/myApp`, the URI is `/myApp`. 
-The leading slash is needed."
+The leading slash is needed. Default value is `/`."
 temp = gets.chomp
-values['base_uri'] = temp.size == 0 ? "#{values['site_name'].downcase}/" : "#{temp}/"
+values['base_uri'] = temp.size == 0 ? "/" : "#{temp}/"
 # Host
 puts "What is your database's host name. 
 The default value is localhost."
