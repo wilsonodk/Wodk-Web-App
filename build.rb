@@ -68,8 +68,7 @@ Now that we have the values, we are going to put them to use...
  "
 
 # Have all the variables, now do replacement for them
-files = [".htaccess", "index.php"]
-files.each do |file_name|
+%w(.htaccess index.php).each do |file_name|
 	text = File.read(file_name)
 	replace = text.gsub(regex) do |m| 
 		values[$1]
@@ -91,4 +90,5 @@ end
 puts "
 You're all set to get started!
 
-You can safely remove build.rb now."
+You can now navigate to your web app in a browser.
+"
