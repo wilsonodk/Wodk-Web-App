@@ -2,7 +2,7 @@
 
 A PHP/JS web application framework starter kit.
 
-Version 1.0.2
+Version 1.0.3
 
 I like to build small simple web apps. Everytime I find myself having to bring 
 together all the various files, and build the directory stucture. This project
@@ -109,6 +109,7 @@ In `views/templates/about.html.twig` create your template code
 {% extends "base.html.twig" %}
 
 {% block head %}
+	{{ parent() }}
 {% endblock %}
 
 {% block content %}
@@ -119,6 +120,8 @@ In `views/templates/about.html.twig` create your template code
 
 ## Change Log ##
 
+* 1.0.3
+> Released November 1, 2012 -- Improved default template example. Now the head block uses inheritance.
 * 1.0.2
 > Released November 1, 2012 -- Improved initial run of the web app.
 * 1.0.1
