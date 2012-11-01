@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 about = "Wodk Web App Builder Script"
-version = "1.0.0"
+version = "1.0.2"
 values = Hash.new
 regex = /%%(\w+)%%/
 
@@ -15,16 +15,19 @@ To get started, we'll ask you a couple of questions.
 Let's get started...
 
 "
+sleep 1
 
 # Get all of our values for replacement
 puts "What is your human readable site name? 
-Example: Football Challenge or D&D Encounter Builder"
+Example: Football Challenge or D&D Encounter Builder
+The default value is 'Site Name'"
 temp = gets.chomp
 values['site_name'] = temp.size == 0 ? "'Site Name'" : "'#{temp}'"
 # Base URI
 puts "What is the URI where the app is being loaded? 
-For example, if the site is loading from `http://example.com/myApp`, the URI is `/myApp`. 
-The leading slash is needed. Default value is `/`."
+For example, if the site is loading from `http://example.com/myApp`, 
+the URI is `/myApp`. The leading slash is needed. 
+The default value is `/`."
 temp = gets.chomp
 values['base_uri'] = temp.size == 0 ? "/" : "#{temp}/"
 # Host
@@ -65,7 +68,8 @@ values['db_prefix'] = temp.size == 0 ? "''" : "'#{temp}'"
 
 puts " 
 Now that we have the values, we are going to put them to use...
- "
+"
+sleep 1
 
 # Have all the variables, now do replacement for them
 %w(.htaccess index.php).each do |file_name|
@@ -75,15 +79,17 @@ Now that we have the values, we are going to put them to use...
 	end
 	File.open(file_name, "w") { |file| file.puts replace }
 	puts "Updated '#{file_name}'"
+	sleep 1
 end
 
 # Clean up the .git folders
 puts " 
 Removing github files and folders"
+sleep 1
 ["rm -rf .git/", "rm -f .gitignore", "rm -f README.md"].each do |cmd| 
 	puts "#{cmd}"
 	`#{cmd}`
-	puts "..."
+	sleep 1
 end
 
 # Web App Ready
