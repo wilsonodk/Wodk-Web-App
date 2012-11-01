@@ -27,40 +27,43 @@ is about doing that tedious work for me.
 
 ### What It Looks Like ###
 
-	├── .htaccess
-	├── index.php
-	├── routes.php
-	├── web_app.log
-	├── controllers
-	│   └── AppController.php
-	│   └── MainController.php
-	│   └── ...
-	├── public
-	│   └── backbone-min.js
-	│   └── jquery-1.7.2.min.js
-	│   └── main.css
-	│   └── underscore-min.js
-	│   └── ...
-	├── vendor
-	│   └── limonade
-	│   └── Twig
-	│   └── Wodk
-	│   └── ...
-	└── views
-		└── cache
-			└── ...
-		└── template
-			└── base.html.twig
-			└── home.html.twig
-			└── macros.twig
-			└── ...
+```
+├── .htaccess
+├── index.php
+├── routes.php
+├── web_app.log
+├── controllers
+│   └── AppController.php
+│   └── MainController.php
+│   └── ...
+├── public
+│   └── backbone-min.js
+│   └── jquery-1.7.2.min.js
+│   └── main.css
+│   └── underscore-min.js
+│   └── ...
+├── vendor
+│   └── limonade
+│   └── Twig
+│   └── Wodk
+│   └── ...
+└── views
+	└── cache
+		└── ...
+	└── template
+		└── base.html.twig
+		└── home.html.twig
+		└── macros.twig
+		└── ...
+```
         
 ## How to Use ##
 
-1. Clone the git repo
-2. Run build.rb, follow the prompts
-3. ???
-4. Profit!
+1. Clone the git repo (git clone https://github.com/wilsonodk/Wodk-Web-App.git myapp)
+2. Run `./build.rb`, follow the prompts
+3. Load the site in a browser, fix any issues you find
+4. ???
+5. Profit!
 
 ### What Information You'll Need ###
 
@@ -82,7 +85,7 @@ is about doing that tedious work for me.
 
 ### Building: From Route to Controller to Template ###
 
-Let's say you want to render a page at `http://www.example.com/myapp/about`. This assumes that your base URI is /myapp.
+Let's say you want to render a page at `http://www.example.com/myapp/about`. This assumes that your base URI is `/myapp`.
 
 In `routes.php` setup your routing information:
 
@@ -142,8 +145,8 @@ In `views/templates/about.html.twig` create your template code
 
 ### MyDB ###
 
-A Subclass of [MySQLi][]. It includes a few helper methods that assit with query
-formatting.
+A subclass of [MySQLi][]. It includes a few helper methods that assist with query formatting. Query formatting allows
+for a statement to be written like `SELECT * FROM {{table}} WHERE id = %s`, then transformed into `SELECT * FROM myapp_table WHERE id = 1`.
 
 * qry
 > This will execute a SQL statement, but is extended to take arguments ala [sprintf][]  
@@ -160,13 +163,12 @@ formatting.
 > @return The instance for chaining.  
 
 * setPrefixPattern
-> Set the Regular Expression to used for prefix replacement.  
-> The default RegEx is /{{(\w+)}}/.  
+> Set the Regular Expression to used for prefix replacement. The default RegEx is `'/{{(\w+)}}/'`. See [preg_replace][] for more information.  
 > @param $pattern A string of a RegEx pattern.  
 > @return The instance for chaining.  
 
 * setQuery
-> Set a "prepared" query for use later. This allows you to prepare queries for use later.  
+> Set a "prepared" query for use later.   
 > @param The name of the query for use later.  
 > @param The SQL query  
 > @params The arguments to be formatted into the query  
@@ -230,3 +232,4 @@ Two simple extensions to the [Twig][] template language.
 [jQuery]: http://jquery.com/
 [Backbone.js]: http://documentcloud.github.com/backbone/
 [Underscore.js]: http://documentcloud.github.com/underscore/
+[preg_replace]: http://php.net/manual/en/function.preg-replace.php
