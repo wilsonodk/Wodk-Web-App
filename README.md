@@ -27,35 +27,33 @@ is about doing that tedious work for me.
 
 ### What It Looks Like ###
 
-```
-├── .htaccess
-├── index.php
-├── routes.php
-├── web_app.log
-├── controllers
-│   └── AppController.php
-│   └── MainController.php
-│   └── ...
-├── public
-│   └── backbone-min.js
-│   └── jquery-1.7.2.min.js
-│   └── main.css
-│   └── underscore-min.js
-│   └── ...
-├── vendor
-│   └── limonade
-│   └── Twig
-│   └── Wodk
-│   └── ...
-└── views
-	└── cache
-		└── ...
-	└── template
-		└── base.html.twig
-		└── home.html.twig
-		└── macros.twig
-		└── ...
-```
+	├── .htaccess
+	├── index.php
+	├── routes.php
+	├── web_app.log
+	├── controllers
+	│   └── AppController.php
+	│   └── MainController.php
+	│   └── ...
+	├── public
+	│   └── backbone-min.js
+	│   └── jquery-1.7.2.min.js
+	│   └── main.css
+	│   └── underscore-min.js
+	│   └── ...
+	├── vendor
+	│   └── limonade
+	│   └── Twig
+	│   └── Wodk
+	│   └── ...
+	└── views
+		└── cache
+			└── ...
+		└── template
+			└── base.html.twig
+			└── home.html.twig
+			└── macros.twig
+			└── ...
         
 ## How to Use ##
 
