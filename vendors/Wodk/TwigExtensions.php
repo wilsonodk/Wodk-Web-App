@@ -1,5 +1,13 @@
 <?php
-class TwigFilters extends Twig_Extension 
+/*
+ * This file is part of Wodk.
+ *
+ * (c) 2012 Wilson Wise
+ *
+ * Extensions to the Twig template engine.
+ *
+ */
+class Wodk_TwigExtensions extends Twig_Extension 
 {
     public function getName() {
         return 'one_space';

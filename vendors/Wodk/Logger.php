@@ -1,5 +1,13 @@
 <?php
-class Logger {
+/*
+ * This file is part of Wodk.
+ *
+ * (c) 2009 Wilson Wise
+ *
+ * A simple logger.
+ *
+ */
+class Wodk_Logger {
 	private $logFilePath;
 
 	function __construct($strLogFilePath = './logger.log') {

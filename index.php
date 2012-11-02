@@ -20,15 +20,15 @@ define('DB_PFIX',		%%db_prefix%%);
 
 // Get the micro-framework Limonade
 require_once('vendors/limonade.php');
-// Load Database Class
-require_once('vendors/Wodk/MyDB.php');
-// Get Logger Class
-require_once('vendors/Wodk/Logger.php');
+
 // Get our templating engine Twig
 require_once('vendors/Twig/Autoloader.php');
 Twig_Autoloader::register();
-// Load our Twig Extension
-require_once('vendors/Wodk/TwigFilters.php');
+
+// Get our Wodk classes
+require_once('vendors/Wodk/Autoloader.php');
+Wodk_Autoloader::register();
+
 // Get our routes
 require_once('routes.php');
 
@@ -63,7 +63,7 @@ function get_flash_messages($all) {
 // Limonade 
 function configure() {
 	// Setup logging
-	$log = new Logger(WODK_LOG);
+	$log = new Wodk_Logger(WODK_LOG);
 	option('log', $log);
 
 	// Setup environment
@@ -74,7 +74,7 @@ function configure() {
 	option('site_name', SITE_NAME);
 
 	// Setup database
-	$db = new MyDB(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT, DB_SOCK);
+	$db = new Wodk_DB(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT, DB_SOCK);
 	option('db', $db->setPrefix(DB_PFIX));
 
 	// Setup template engine
@@ -84,7 +84,7 @@ function configure() {
 		'cache' => $cache,
 	));
 	$twig->getExtension('core')->setTimezone('America/New_York');
-	$twig->addExtension(new TwigFilters());
+	$twig->addExtension(new Wodk_TwigExtensions());
 	option('twig', $twig);
 
 	// Setup other application configurations

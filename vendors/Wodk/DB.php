@@ -1,5 +1,13 @@
 <?php
-class MyDB extends mysqli {
+/*
+ * This file is part of Wodk.
+ *
+ * (c) 2012 Wilson Wise
+ *
+ * Extends MySQLi.
+ *
+ */
+class Wodk_DB extends mysqli {
 	private $_prefix = '';
 	private $prefix_pattern = '/{{(\w+)}}/';
 	private $use_prefix = FALSE;
