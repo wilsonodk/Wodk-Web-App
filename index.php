@@ -65,7 +65,7 @@ function configure() {
 	option('site_name', SITE_NAME);
 
 	// Setup database
-	$db_config = $env === ENV_PRODUCTION ? 'db-prod' : 'db-dev';
+	$db_config = $env === ENV_PRODUCTION ? 'db-prod.php' : 'db-dev.php';
 	require_once($db_config);
 	$db = new Wodk_DB(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT, DB_SOCK);
 	option('db', $db->setPrefix(DB_PFIX));
