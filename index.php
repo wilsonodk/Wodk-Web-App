@@ -7,16 +7,7 @@ define('TEMPLATE_DIR',	SITE_ROOT . '/views/templates');
 define('SITE_NAME',		%%site_name%%);
 define('WODK_LOG',		SITE_ROOT . '/web_app.log');
 define('WODK_BASE_URI',	'%%base_uri%%');
-// Use this with halt() to send a 403
-define('FORBIDDEN',		403);
-// Database connection
-define('DB_HOST', 		%%db_hostname%%);
-define('DB_PORT',		%%db_port%%);
-define('DB_NAME',		%%db_database%%);
-define('DB_USER',		%%db_username%%);
-define('DB_PASS',		%%db_password%%);
-define('DB_SOCK',		%%db_socket%%);
-define('DB_PFIX',		%%db_prefix%%);
+define('FORBIDDEN',		403); // Use this with halt() to send a 403
 
 // Get the micro-framework Limonade
 require_once('vendors/limonade.php');
@@ -74,6 +65,8 @@ function configure() {
 	option('site_name', SITE_NAME);
 
 	// Setup database
+	$db_config = $env === ENV_PRODUCTION ? 'db-prod' : 'db-dev';
+	require_once($db_config);
 	$db = new Wodk_DB(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT, DB_SOCK);
 	option('db', $db->setPrefix(DB_PFIX));
 

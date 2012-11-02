@@ -72,7 +72,7 @@ Now that we have the values, we are going to put them to use...
 sleep 1
 
 # Have all the variables, now do replacement for them
-%w(.htaccess index.php).each do |file_name|
+%w(.htaccess db-dev.php db-prod.php index.php).each do |file_name|
 	text = File.read(file_name)
 	replace = text.gsub(regex) do |m| 
 		values[$1]
