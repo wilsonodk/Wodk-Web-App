@@ -89,7 +89,7 @@ In `routes.php` setup your routing information:
 
 ```php
 // GET /about
-dispatch('/about', 'MainController::about')
+dispatch('/about', 'MainController::about');
 ```
 In `controllers/MainController.php` create your handler method:
 
