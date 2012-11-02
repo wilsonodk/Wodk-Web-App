@@ -1,5 +1,4 @@
 <?php
-require_once('AppController.php');
 class MainController extends AppController 
 {
 	static function home() {
@@ -25,5 +24,4 @@ class MainController extends AppController
 		));
 	}
 }
-
 ?>

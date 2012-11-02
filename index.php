@@ -16,9 +16,13 @@ require_once('vendors/limonade.php');
 require_once('vendors/Twig/Autoloader.php');
 Twig_Autoloader::register();
 
-// Get our Wodk classes
+// Autoload our Wodk classes
 require_once('vendors/Wodk/Autoloader.php');
 Wodk_Autoloader::register();
+
+// Autoload our controllers
+require_once('controllers/AppController.php');
+AppController::register();
 
 // Get our routes
 require_once('routes.php');
