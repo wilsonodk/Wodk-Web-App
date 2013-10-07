@@ -2,7 +2,7 @@
 
 A PHP/JS web application framework starter kit.
 
-Version 1.0.5
+Version 1.0.6
 
 There are a lot of great web application frameworks available. This package contains two of them, one for PHP called [Limonade][] and another for JS called [Backbone.js][]. It's not a framework itself, but instead a skeleton to use these other great products. 
 
