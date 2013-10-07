@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 about = "Wodk Web App Builder Script"
-version = "1.0.5"
+version = "1.0.6"
 values = Hash.new
 regex = /%%(\w+)%%/
 
