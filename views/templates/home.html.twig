@@ -1,15 +1,15 @@
 {% extends "base.html.twig" %}
 
 {% block head %}
-	{{ parent() }}
+    {{ parent() }}
 {% endblock %}
 
 {% block content %}
-	{{ parent() }}
+    {{ parent() }}
 
-	{% for status in statuses %}
-		<p class="error">{{ status }}</p>
-	{% else %}
-		<p class="message">Wodk Web App is fully configured. You are ready to get started.</p>
-	{% endfor %}
+    {% for status in statuses %}
+        <p class="error">{{ status }}</p>
+    {% else %}
+        <p class="message">Wodk Web App is fully configured. You are ready to get started.</p>
+    {% endfor %}
 {% endblock %}

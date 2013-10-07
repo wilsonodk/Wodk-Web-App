@@ -1,10 +1,10 @@
 {% macro link(href, text, root) %}
-	{% set url %}
-		{{ root|default('') }}{{ href }}
-	{% endset %}
-	<a href="{{ url|one_space|raw }}">{{ text }}</a>
+    {% set url %}
+        {{ root|default('') }}{{ href }}
+    {% endset %}
+    <a href="{{ url|one_space|raw }}">{{ text }}</a>
 {% endmacro %}
 
 {% macro img(src, width, height, alt) %}
-	<img src="{{ src|one_space }}" width="{{ width }}" height="{{ height }}" border="0" alt="{{ alt }}" />
+    <img src="{{ src|one_space }}" width="{{ width }}" height="{{ height }}" border="0" alt="{{ alt }}" />
 {% endmacro %}

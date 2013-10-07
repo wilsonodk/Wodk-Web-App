@@ -2,4 +2,4 @@
 
 ## Views Cache ##
 
-This is here for git
+Cached view templates will be placed here in `production`.
