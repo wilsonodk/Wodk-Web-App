@@ -1,0 +1,13 @@
+{
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/wilsonodk/wodk"
+        }
+    ],
+    "require": {
+        "wodk/wodk": "v1.1.0",
+        "twig/twig": "v1.10.0",
+        "sofadesign/limonade": "dev-master"
+    }
+}
