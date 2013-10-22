@@ -92,6 +92,13 @@ sleep 1
   sleep 1
 end
 
+# Install our dependencies
+puts "
+Now installing our dependencies"
+sleep 1
+`composer install`
+sleep 1
+
 # Web App Ready
 puts "
 You're all set to get started!
