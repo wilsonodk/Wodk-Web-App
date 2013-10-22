@@ -1,24 +1,18 @@
 <?php
 // Setup constants
 // Wodk Web App constants
-define('SITE_ROOT',     __DIR__);
-define('CACHE_DIR',     SITE_ROOT . '/views/cache');
-define('TEMPLATE_DIR',  SITE_ROOT . '/views/templates');
-define('SITE_NAME',     %%site_name%%);
-define('WODK_LOG',      SITE_ROOT . '/web_app.log');
+define('SITE_ROOT', __DIR__);
+define('CACHE_DIR', SITE_ROOT . '/views/cache');
+define('TEMPLATE_DIR', SITE_ROOT . '/views/templates');
+define('SITE_NAME', %%site_name%%);
+define('WODK_LOG', SITE_ROOT . '/web_app.log');
 define('WODK_BASE_URI', '%%base_uri%%');
-define('FORBIDDEN',     403); // Use this with halt() to send a 403
+define('FORBIDDEN', 403); // Use this with halt() to send a 403
 
-// Get the micro-framework Limonade
-require_once('vendors/limonade.php');
-
+// Get the Wodk library (DB, Logger and TwigExtensions)
 // Get our templating engine Twig
-require_once('vendors/Twig/Autoloader.php');
-Twig_Autoloader::register();
-
-// Autoload our Wodk classes
-require_once('vendors/Wodk/Autoloader.php');
-Wodk_Autoloader::register();
+// Get the micro-framework Limonade
+require_once('vendor/autoload.php');
 
 // Autoload our controllers
 require_once('controllers/AppController.php');
@@ -50,25 +44,30 @@ function get_flash_messages($all) {
         }
     }
 
-    option('have_flash_errors',   count($errs) ? TRUE : FALSE);
-    option('flash_errors',        $errs);
+    option('have_flash_errors', count($errs) ? TRUE : FALSE);
+    option('flash_errors', $errs);
     option('have_flash_messages', count($msgs) ? TRUE : FALSE);
-    option('flash_messages',      $msgs);
+    option('flash_messages', $msgs);
 
-    return array('errors' => $errs, 'messages' => $msgs);
+    return array(
+        'errors' => $errs,
+        'messages' => $msgs,
+    );
 }
 
 // Limonade
 function configure() {
+    // Reset the signature
+    option('signature', 'Wodk Web App');
+
     // Setup logging
     $log = new Wodk_Logger(WODK_LOG);
     option('log', $log);
 
     // Setup environment
-    $localhost = preg_match('/^localhost(\:\d+)?/', $_SERVER['HTTP_HOST']);
-    $env =  $localhost ? ENV_DEVELOPMENT : ENV_PRODUCTION;
-    option('env',       $env);
-    option('base_uri',  WODK_BASE_URI);
+    $env = trim(file_get_contents('ENVIRONMENT.txt')) === 'prod' ? ENV_PRODUCTION : ENV_DEVELOPMENT;
+    option('env', $env);
+    option('base_uri', WODK_BASE_URI);
     option('site_name', SITE_NAME);
 
     // Setup database
